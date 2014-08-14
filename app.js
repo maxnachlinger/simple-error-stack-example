@@ -1,4 +1,3 @@
-var util = require('util');
 var iAteYourStack = require('./iAteYourStack');
 var hereIsYourStack = require('./hereIsYourStack');
 
