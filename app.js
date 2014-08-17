@@ -1,11 +1,9 @@
-require('./iAteYourStack')(function(err) {
-	console.log('A stacktrace of limited usefulness ----------------\n', err.stack);
+require('./iAteYourStack')(printError.bind(printError, 'iAteYourStack'));
 
-	require('./hereIsYourStack')(function(err) {
-		console.log('\nA useful stacktrace -----------------\n', err.stack);
+//require('./hereIsYourStack')(printError.bind(printError, 'hereIsYourStack'));
+//
+//require('./moreStack')(printError.bind(printError, 'moreStack'));
 
-		require('./moreStack')(function(err) {
-			console.log('\nA useful stacktrace -----------------\n', err.stack);
-		});
-	});
-});
+function printError(msg, err) {
+	console.log('\n' + msg + '\n', err.stack);
+}
